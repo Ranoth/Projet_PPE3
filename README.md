@@ -8,3 +8,6 @@
   * gestion authentification,
   * gestion modèle statistique,
   * module/formulaire de recherche
+* Assia : médicaments
+* Laïdine : composants
+* Hamdi : famille
