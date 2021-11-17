@@ -22,6 +22,11 @@ class Composant
      */
     private $nom_composant;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +40,18 @@ class Composant
     public function setNomComposant(string $nom_composant): self
     {
         $this->nom_composant = $nom_composant;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
