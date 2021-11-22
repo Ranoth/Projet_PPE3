@@ -25,7 +25,7 @@ class AppFixtures extends Fixture
        
         $coverImage = $faker->imageUrl(1000,350);
         
-        $composant->setTitle($nom_composant)
+        $composant->setComposant($nom_composant)
                   ->setCoverImage($coverImage)
            
         for($j = 1; $j <= mt_rand(2, 5); $j++){
@@ -37,7 +37,7 @@ class AppFixtures extends Fixture
         
                     
                 $manager->persist($image);
-       }
+        }
 
         $manager->persist($composant);
         }
