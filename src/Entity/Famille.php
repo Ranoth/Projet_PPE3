@@ -20,7 +20,12 @@ class Famille
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nomFamille;
+    private $nom_famille;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image_fml;
 
     public function getId(): ?int
     {
@@ -29,12 +34,24 @@ class Famille
 
     public function getNomFamille(): ?string
     {
-        return $this->nomFamille;
+        return $this->nom_famille;
     }
 
-    public function setNomFamille(string $nomFamille): self
+    public function setNomFamille(string $nom_famille): self
     {
-        $this->nomFamille = $nomFamille;
+        $this->nom_famille = $nom_famille;
+
+        return $this;
+    }
+
+    public function getImageFml(): ?string
+    {
+        return $this->image_fml;
+    }
+
+    public function setImageFml(?string $image_fml): self
+    {
+        $this->image_fml = $image_fml;
 
         return $this;
     }
