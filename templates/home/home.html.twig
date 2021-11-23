@@ -1,45 +1,143 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gestion des médocs{% endblock %}
+
+
+{% block title %}
+      Bienvenue sur le meilleur réseau de medicament!
+{% endblock %}
+{% block header %}
+    <h2>Voici le header</h2>
+{% endblock %}
 
 {% block body %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{path('composants_liste')}}">Composant</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
+   
+<div class="container">
+<div class="jumbotron mt-3">
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Bienvenue dans le site Hamdi le BG !</h5>
+     
+    </div>
+    <p class="mb-1">accédez facilement aux différents modes de recherche et dernières données sur les médicaments : gammes de médicaments, spécialités, monographies, substances actives, laboratoires pharmaceutiques, etc.</small>
+  </a>
+    </div>
+    <p class="mb-1">vous êtes un professionnel de santé ? Des contenus et des fonctionnalités vous sont réservés : accès direct aux spécialités, recherche par classification ATC et par domaine thérapeutique, calcul d‘interactions entre médicaments, aide à la prescription en DC, recherche de médicaments équivalents à l’étranger… Pour en bénéficier, il suffit d'être connecté.</p>
+  <p class="lead">
+    <small class="btn btn-primary btn-lg" href="#" role="button">Voir nos medicaments.</small>
+    </p>
+  </a>
+</div>
+</div>
+<h2 class="h1 mt-3 mb-4">Nos medicaments</h2>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card bg-light mb-1">
+           <div class="card-header text-center">
+                  3 medicament, <strong>49&euro;/ nuit</strong>
+                  <small>Pas encore noté</small>
+           </div>
+             <img src="http:///placehold.it/1000x400" alt="Image de l'appartement"
+             style="height: 200px; width: 100% display: block">
+                <div class="card-body">
+                    <h4 class="card-title">
+                         medicament de ouf !
+                    </h4>
+                    <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Soluta nihil repellat maxime voluptate at eius 
+                    ut modi eveniet ipsam expedita suscipit, quod omnis vitae porro, 
+                    rem unde. Tempore, minima labore.</p>
+                    <a href="#" class="btn btn-secondary"> En savoir plus !</a>
         </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
+    </div>
+</div>
+    <div class="col-md-4">
+        <div class="card bg-light mb-1">
+           <div class="card-header text-center">
+                  3 medicament, <strong>49&euro;/ nuit</strong>
+                  <small>Pas encore noté</small>
+           </div>
+             <img src="http:///placehold.it/1000x400" alt="Image de l'appartement"
+             style="height: 200px; width: 100% display: block">
+                <div class="card-body">
+                    <h4 class="card-title">
+                         medicament de ouf !
+                    </h4>
+                    <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Soluta nihil repellat maxime voluptate at eius 
+                    ut modi eveniet ipsam expedita suscipit, quod omnis vitae porro, 
+                    rem unde. Tempore, minima labore.</p>
+                    <a href="#" class="btn btn-secondary"> En savoir plus !</a>
+        </div>
+    </div>
+</div>
+    <div class="col-md-4">
+        <div class="card bg-light mb-1">
+           <div class="card-header text-center">
+                  3 medicaments, <strong>49&euro;/ nuit</strong>
+                  <small>Pas encore noté</small>
+           </div>
+             <img src="http:///placehold.it/1000x400" alt="Image de l'appartement"
+             style="height: 200px; width: 100% display: block">
+                <div class="card-body">
+                    <h4 class="card-title">
+                         medicament de ouf !
+                    </h4>
+                    <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Soluta nihil repellat maxime voluptate at eius 
+                    ut modi eveniet ipsam expedita suscipit, quod omnis vitae porro, 
+                    rem unde. Tempore, minima labore.</p>
+                    <a href="#" class="btn btn-secondary"> En savoir plus !</a>
+        </div>
+    </div>
+</div>
+
+<h2 class="h1 mt-3 mb-4">Nos clients stars !</h2>
+        <div class="row">
+            <div class="col">
+                <div class="card border-secondary mb-3">
+                    <div class="card-body">
+                        <h4 class="card-title">laysley tricks</h4>
+
+                        <hr>
+
+                        <div class="card-text">
+                            <img src="http:///placehold.it/64x64" alt="Avatar" class="float-left mr-3">
+                                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                                Quidem dignissimos quibusdam, corrupti adipisci officia at voluptas eaque alias excepturi commodi in sed labore,
+                                 quis cupiditate minima praesentium molestias ullam inventore.</p>
+                                 <a href="#" class="btn-btn-success float-right">En savoir plus !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-secondary mb-3">
+                    <div class="card-body">
+                        <h4 class="card-title">laysley tricks</h4>
+
+                        <hr>
+
+                        <div class="card-text">
+                            <img src="http:///placehold.it/64x64" alt="Avatar" class="float-left mr-3">
+                                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                                Quidem dignissimos quibusdam, corrupti adipisci officia at voluptas eaque alias excepturi commodi in sed labore,
+                                 quis cupiditate minima praesentium molestias ullam inventore.</p>
+                                 <a href="#" class="btn-btn-success float-right">En savoir plus !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+</div>
+
+
 {% endblock %}
+

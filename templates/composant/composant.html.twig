@@ -2,15 +2,31 @@
 
 {% block title %}Nos composants{% endblock %}
 
-
-
-
-
 {% block body %}
 <div class="container">
    <h1 class="my-3">Voici les composants de nos médicaments !</h1>
 
       
+      <div class="row">
+         {% for composant in composants%} 
+             {% set url = path('composants_liste', {'composant': composant}) %}
+
+            <div class="col-md-4">
+               <div class="card bg-light mb-1">
+                  <a href="{{ url }}">
+                     <img src="{{composant.image}}" alt="Image du composant"style="height: 200px; width: 100%; display: block;">
+                  </a>
+                       <div class="card-body">
+                        <h4 class="card-text">
+                           <a href="{{ url }}">
+                              {{composant.nomComposant}}
+                           </a>                  
+                        <a href="{{ url }}" class="btn btn-secondary"> En savoir plus !</a>
+                     </div>
+               </div>
+            </div>
+         
+        {% endfor %}
      </div>
 </div>
 

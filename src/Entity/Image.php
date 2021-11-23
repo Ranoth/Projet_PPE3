@@ -55,4 +55,15 @@ class Image
 
         return $this;
     }
+    public function getComposant(): ?Composant
+    {
+        return $this->composant;
+    }
+
+    public function setComposant(?Composant $composant): self
+    {
+        $this->composant = $composant;
+
+        return $this;
+    }
 }

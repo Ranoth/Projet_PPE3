@@ -2,8 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\ComposantRepository;
+use App\Entity\Image;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ComposantRepository;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass=ComposantRepository::class)
