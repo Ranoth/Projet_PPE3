@@ -3,4 +3,7 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
+  {% if app.user %}
+    <div class="btn btn-primary">secret button</div>
+  {% endif %}
 {% endblock %}
