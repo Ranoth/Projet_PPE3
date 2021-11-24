@@ -16,36 +16,63 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr-FR');
 
+        $fichierMedocCsv=fopen(__DIR__."/medoc.csv","r");
+        while (!feof($fichierMedocCsv)){
+            $lesMedocs[]=fgetcsv($fichierMedocCsv);
+        }
+        fclose($fichierMedocCsv);
 
-        for($i = 1; $i <= 30; $i++) {
+        foreach ($lesMedocs as $value){
+            $medoc=new Medicaments();
+            $medoc  ->setId(intval($value[0])) 
+                    ->setNomCommercial("<p>".)
+        }
 
-       
-        $composant = new Composant;
 
 
-        $nom_composant = $faker->sentence();
-       
-        $image = $faker->imageUrl(1000,350);
-       
-        $composant->setNomComposant($nom_composant)
-         
-           ->setImage($image);
 
-           for($j = 1; $j <= mt_rand(2, 5); $j++){
-            $image = new Image();
 
-            $image->setUrl($faker->imageUrl())
-                  ->setCaption($faker->sentence())
-                  ->setComposant($composant);
 
-                       
-        $manager->persist($image);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
+
+
+        for($i = 1; $i <= 30; $i++) 
+        {
+            $composant = new Composant;
+
+
+   
+
+            $nom_composant = $file->sentence();
+            $composant->setNomComposant($nom_composant)
+                        ->setImage($image);
+
+            for($j = 1; $j <= mt_rand(2, 5); $j++)
+            {
+                $image = new Image();
+
+                $image->setUrl($faker->imageUrl())
+                    ->setCaption($faker->sentence())
+                    ->setComposant($composant);
+            
+                $manager->persist($image);
+            }
+            $manager->persist($composant);
+        }
+        $manager->flush();  
+        */ 
     }
-    $manager->persist($composant);
-    }
-            $manager->flush();
-    }
-
-        
-    
 }
