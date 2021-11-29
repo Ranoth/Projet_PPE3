@@ -22,6 +22,14 @@ class Famille
      */
     private $nom_famille;
 
+<<<<<<< HEAD
+=======
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image_fml;
+
+>>>>>>> laïdine
     public function getId(): ?int
     {
         return $this->id;
@@ -38,4 +46,19 @@ class Famille
 
         return $this;
     }
+<<<<<<< HEAD
+=======
+
+    public function getImageFml(): ?string
+    {
+        return $this->image_fml;
+    }
+
+    public function setImageFml(?string $image_fml): self
+    {
+        $this->image_fml = $image_fml;
+
+        return $this;
+    }
+>>>>>>> laïdine
 }
