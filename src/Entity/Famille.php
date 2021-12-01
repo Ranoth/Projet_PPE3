@@ -12,7 +12,7 @@ class Famille
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -31,6 +31,7 @@ class Famille
     {
         return $this->id;
     }
+ 
 
     public function getNomFamille(): ?string
     {

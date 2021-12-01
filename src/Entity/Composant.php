@@ -14,7 +14,7 @@ class Composant
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -33,6 +33,7 @@ class Composant
     {
         return $this->id;
     }
+ 
 
     public function getNomComposant(): ?string
     {
@@ -57,33 +58,6 @@ class Composant
 
         return $this;
     }
-     /**
-     * @return Collection|Image[]
-     */
-    public function getImages(): Collection
-    {
-        return $this->images;
-    }
+    
 
-    public function addImage(Image $image): self
-    {
-        if (!$this->images->contains($image)) {
-            $this->images[] = $image;
-            $image->setComposant($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImage(Image $image): self
-    {
-        if ($this->images->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getComposant() === $this) {
-                $image->setComposant(null);
-            }
-        }
-
-        return $this;
-    }
 }
