@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DispSRCHTSTController!
+{% endblock %}
+
+{% block body %}
+	{% for medicament in medicaments %}
+		<div class="container">
+			<div class="card mb-3">
+				<div class="card-body">
+					<h4 class="card-title">{{ medicament.nom }}</h4>
+					<img src="{{ medicament.image }}" alt="">
+					<p class="card-text">{{ medicament.description }}</p>
+					<p class="card-text">{{ medicament.substance }}</p>
+					<href class="btn btn-primary">tst</href>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

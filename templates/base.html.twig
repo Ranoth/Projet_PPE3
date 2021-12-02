@@ -7,7 +7,7 @@
 			{% endblock %}
 		</title>
 		{% block stylesheets %}
-			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 		{% endblock %}
 	</head>
 	<body>
@@ -24,6 +24,10 @@
 							<li class="nav-item">
 								<a class="nav-link active" href="{{path('home')}}">Home
 									<span class="visually-hidden">(current)</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="{{path('dispsrchtst_list')}}">SearchResultDesignTest
 								</a>
 							</li>
 						</ul>
@@ -45,13 +49,13 @@
 								</li>
 							</ul>
 						{% endif %}
-						<form class="d-flex" data-dashlane-rid="82b31caea5962749" data-form-type="">
-							<input class="form-control me-sm-2" type="text" placeholder="Search" data-dashlane-rid="0e63b00ae180dc2e" data-form-type="">
-							<button class="btn btn-success my-2 my-sm-0" type="submit" data-dashlane-rid="e106b8abfe8aa383" data-dashlane-label="true" data-form-type="">Search</button>
+						<form class="d-flex" method="post" action="{{path('dispsrchtst_quick_search')}}">
+							<input class="form-control me-sm-2" type="text" name="search" placeholder="Quick Search" data-dashlane-rid="0e63b00ae180dc2e" data-form-type="">
+							<button class="btn btn-success my-2 my-sm-0" type="submit" data-dashlane-rid="e106b8abfe8aa383" data-dashlane-label="true" data-form-type="">Search</a>
 						</form>
 					</div>
 				</div>
 			</body>
 		</body>
 	</html>
-</nav>{% endblock %}{% block body %}{% endblock %}</body>{% block javascripts %}<script src="js/boostrap.js"></script>{% endblock %}</html>
+</nav>{% endblock %}{% block body %}{% endblock %}</body>{% block javascripts %}<script src="{{ asset('js/boostrap.js') }}"></script>{% endblock %}</html>
