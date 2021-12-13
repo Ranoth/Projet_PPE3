@@ -4,9 +4,9 @@ namespace App\DataFixtures;
 
 
 use Faker\Factory;
-use App\Entity\Image;
 
-use App\Entity\Composant;
+use App\Entity\Famille;
+use App\Entity\Medicaments;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
@@ -16,63 +16,67 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr-FR');
 
-        $fichierMedocCsv=fopen(__DIR__."/medoc.csv","r");
-        while (!feof($fichierMedocCsv)){
-            $lesMedocs[]=fgetcsv($fichierMedocCsv);
+        $fichierFamilleCsv=fopen(__DIR__."/famille_medoc.csv","r");
+        while (!feof($fichierFamilleCsv)){
+            $lesFamilles[]=fgetcsv($fichierFamilleCsv);
         }
-        fclose($fichierMedocCsv);
-
-        foreach ($lesMedocs as $value){
-            $medoc=new Medicaments();
-            $medoc  ->setId(intval($value[0])) 
-                    ->setNomCommercial("<p>".)
+        fclose($fichierFamilleCsv);
+     
+        foreach ($lesFamilles as $value){
+            $famille = new Famille();
+            $famille->setNomFamille($value[0])
+                    ->setImageFml('https://www.weblex.fr/images/flux_actus/medicaments3.jpg');
+                    $manager->persist($famille);
         }
+        $manager->flush();
+
+ 
+   }   }     
 
 
 
 
 
+       
+        
+    
+        
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-        /*
-
-
-        for($i = 1; $i <= 30; $i++) 
-        {
-            $composant = new Composant;
-
-
-   
-
-            $nom_composant = $file->sentence();
-            $composant->setNomComposant($nom_composant)
-                        ->setImage($image);
-
-            for($j = 1; $j <= mt_rand(2, 5); $j++)
-            {
-                $image = new Image();
-
-                $image->setUrl($faker->imageUrl())
-                    ->setCaption($faker->sentence())
-                    ->setComposant($composant);
-            
-                $manager->persist($image);
-            }
-            $manager->persist($composant);
+        
+        /*foreach ($lesMedocs as $value){
+            $medoc = new Medicaments();
+            $medoc  
+                    ->setNomCommercial()
+                    ->setPrixEchantion(mt_rand(40, 200))
+                    ->setContreIndication('<p>' .join('</p><p>', $faker->paragraphs(5)). '</p>')
+                    ->setEffet('<p>' .join('</p><p>', $faker->paragraphs(5)). '</p>')
+                    ->setImageMed('https://www.weblex.fr/images/flux_actus/medicaments3.jpg');
+                    $manager->persist($medoc);
         }
-        $manager->flush();  
-        */ 
-    }
+        $manager->flush();
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
 }

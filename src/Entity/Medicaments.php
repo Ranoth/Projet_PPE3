@@ -12,7 +12,7 @@ class Medicaments
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -46,6 +46,8 @@ class Medicaments
     {
         return $this->id;
     }
+    
+  
 
     public function getNomCommercial(): ?string
     {
