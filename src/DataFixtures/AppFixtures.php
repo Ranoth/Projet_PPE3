@@ -3,8 +3,9 @@
 namespace App\DataFixtures;
 
 
-use Faker\Factory;
 
+
+use Faker\Factory;
 use App\Entity\Famille;
 use App\Entity\Medicaments;
 use Doctrine\Persistence\ObjectManager;
@@ -30,34 +31,28 @@ class AppFixtures extends Fixture
         }
         $manager->flush();
 
- 
-   }   }     
-
-
-
-
-
-       
-        
-    
-        
-
-
-
-
-
-        
-        /*foreach ($lesMedocs as $value){
-            $medoc = new Medicaments();
-            $medoc  
-                    ->setNomCommercial()
-                    ->setPrixEchantion(mt_rand(40, 200))
-                    ->setContreIndication('<p>' .join('</p><p>', $faker->paragraphs(5)). '</p>')
-                    ->setEffet('<p>' .join('</p><p>', $faker->paragraphs(5)). '</p>')
-                    ->setImageMed('https://www.weblex.fr/images/flux_actus/medicaments3.jpg');
-                    $manager->persist($medoc);
+        $fichierMedicamentCsv=fopen(__DIR__."/medoc.csv","r");
+        while (!feof($fichierMedicamentCsv)){
+            $lesMedicaments[]=fgetcsv($fichierMedicamentCsv);
         }
-        $manager->flush();
+        fclose($fichierMedicamentCsv);
+       
+       foreach ($lesMedicaments as $value){
+                   $medicament = new Medicaments();
+                   $medicament->setNomCommercial($value[0])
+                           ->setPrixEchantion(mt_rand(40, 200))
+                           ->setContreIndication($faker->sentence(5))
+                           ->setEffet($faker->sentence(5))
+                           ->setImageMed('https://www.weblex.fr/images/flux_actus/medicaments3.jpg');
+                           $manager->persist($medicament);
+               }
+               $manager->flush();
+
+        
+    }
+   }  
+     
+
  
 
 
@@ -79,4 +74,3 @@ class AppFixtures extends Fixture
 
       
 
-}

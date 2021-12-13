@@ -1,0 +1,62 @@
+    {% extends 'base.html.twig' %}
+
+    {% block title %}
+            {{famille.nomFamille}}
+    {% endblock %}
+
+    {% block body %}
+
+    <div class="ad-title" style="background-image: url({{famille.nomFamille}})">
+        <div class="container">
+            <h1>{{famille.nomFamille}}</h1>
+                
+                    
+            <a href="#" class="btn btn-primary">Réserver !</a>
+        </div>
+
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mb-3">
+           
+
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+         
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+</div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col-4">
+                <img src="http://placehold.it/64x64" alt="avatar de joseph">
+                </div>
+                <div class="col">
+                <h3>Joseph dupont</h3>
+                <spn class="badge badge-primary">3 annonces</spn>
+                </div>
+           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, id optio. Unde ipsa accusantium, vero ratione enim exercitationem? Doloribus, quis.</p>
+           <p>Facilis consequatur numquam eius quos rerum laudantium fugit magnam, culpa delectus minus officia, sequi, in sunt et aperiam facere similique?</p>
+           <p>Id nostrum quaerat laboriosam in voluptatem ipsa omnis labore aliquam, neque perspiciatis repudiandae praesentium reprehenderit dicta maiores delectus eius ratione.</p>
+
+            
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+    {% endblock %}
