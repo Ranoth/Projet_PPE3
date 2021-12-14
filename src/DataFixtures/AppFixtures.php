@@ -7,6 +7,7 @@ namespace App\DataFixtures;
 
 use Faker\Factory;
 use App\Entity\Famille;
+
 use App\Entity\Medicaments;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -31,28 +32,31 @@ class AppFixtures extends Fixture
         }
         $manager->flush();
 
-        $fichierMedicamentCsv=fopen(__DIR__."/medoc.csv","r");
-        while (!feof($fichierMedicamentCsv)){
-            $lesMedicaments[]=fgetcsv($fichierMedicamentCsv);
-        }
-        fclose($fichierMedicamentCsv);
-       
-       foreach ($lesMedicaments as $value){
+        for($i = 1; $i <= 30; $i++) {
+        
                    $medicament = new Medicaments();
-                   $medicament->setNomCommercial($value[0])
+                   $medicament->setNomCommercial($faker->sentence(5))
                            ->setPrixEchantion(mt_rand(40, 200))
                            ->setContreIndication($faker->sentence(5))
                            ->setEffet($faker->sentence(5))
-                           ->setImageMed('https://www.weblex.fr/images/flux_actus/medicaments3.jpg');
+                           ->setImageMed('https://c8.alamy.com/compfr/r8b66m/gelules-comprime-bleu-et-blanc-isole-sur-fond-blanc-avec-l-ombre-le-concept-de-sante-globale-la-resistance-aux-antibiotiques-capsule-d-antimicrobiens-p-r8b66m.jpg');
                            $manager->persist($medicament);
                }
                $manager->flush();
+    }
+               
 
         
     }
-   }  
+ 
      
+/*$fichierMedicamentCsv=fopen(__DIR__."/medoc.csv","r");
+while (!feof($fichierMedicamentCsv)){
+    $lesMedicaments[]=fgetcsv($fichierMedicamentCsv);
+}
+fclose($fichierMedicamentCsv);
 
+foreach ($lesMedicaments as $value){
  
 
 

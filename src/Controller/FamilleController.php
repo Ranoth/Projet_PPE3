@@ -20,11 +20,10 @@ class FamilleController extends AbstractController
             'familles' => $familles,
         ]);
     }
-}
-   /**
-     * Permet d'afficher une seule annonce 
+    /**
+     * Permet d'afficher une seule famille 
      * 
-     *@Route("/ads/{nom_famille}", name="famille_show") 
+     *@Route("/famille/{nom_famille}", name="famille_show") 
      *
      * @return Response 
      */
@@ -38,5 +37,7 @@ class FamilleController extends AbstractController
 }
 
 }
+
+   
 
 

@@ -1,14 +1,14 @@
     {% extends 'base.html.twig' %}
 
     {% block title %}
-            {{famille.nomFamille}}
+            {{medicaments.nomCommercial}}
     {% endblock %}
 
     {% block body %}
 
-    <div class="ad-title" style="background-image: url({{famille.nomFamille}})">
+    <div class="ad-title" style="background-image: url({{medicaments.nomCommercial}})">
         <div class="container">
-            <h1>{{famille.nomFamille}}</h1>
+            <h1>{{medicaments.nomCommercial}}</h1>
                 
                     
            
@@ -50,7 +50,7 @@
             <div class="row">
             
                 <div class="col">
-                <h3>informations sur la famille </h3>
+                <h3>informations sur le medicament </h3>
                 <spn class="badge badge-primary">type de medicaments</spn>
                 </div>
                 <div class="row">
