@@ -6,10 +6,10 @@
 <div class="container">
    <h1 class="my-3">Voici nos médicaments !</h1>
 
-      
+         
       <div class="row">
          {% for medicaments in medicaments%} 
-             {% set url = path('medicament_liste', {'medicaments': medicaments}) %}
+              {% set url = path('medicament_show', {'nom_commercial': medicaments.nomCommercial}) %}
 
             <div class="col-md-4">
                <div class="card bg-light mb-1">
@@ -18,10 +18,10 @@
                   </a>
                        <div class="card-body">
                         <h4 class="card-text">
-                           <a href="{{ url }}">
+                           <a href="{{ url }} ">
                               {{medicaments.nomCommercial}}
                            </a>                  
-                        <a href="{{ url }}" class="btn btn-secondary"> En savoir plus !</a>
+                        <a href="{{path('composants_liste')}}" class="btn btn-secondary"> En savoir plus !</a>
                      </div>
                </div>
             </div>

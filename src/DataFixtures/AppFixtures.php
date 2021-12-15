@@ -8,6 +8,7 @@ namespace App\DataFixtures;
 use Faker\Factory;
 use App\Entity\Famille;
 
+use App\Entity\Composant;
 use App\Entity\Medicaments;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -32,7 +33,7 @@ class AppFixtures extends Fixture
         }
         $manager->flush();
 
-        for($i = 1; $i <= 30; $i++) {
+        for($i = 1; $i <= 20; $i++) {
         
                    $medicament = new Medicaments();
                    $medicament->setNomCommercial($faker->sentence(5))
@@ -43,6 +44,7 @@ class AppFixtures extends Fixture
                            $manager->persist($medicament);
                }
                $manager->flush();
+
     }
                
 
@@ -50,13 +52,7 @@ class AppFixtures extends Fixture
     }
  
      
-/*$fichierMedicamentCsv=fopen(__DIR__."/medoc.csv","r");
-while (!feof($fichierMedicamentCsv)){
-    $lesMedicaments[]=fgetcsv($fichierMedicamentCsv);
-}
-fclose($fichierMedicamentCsv);
 
-foreach ($lesMedicaments as $value){
  
 
 

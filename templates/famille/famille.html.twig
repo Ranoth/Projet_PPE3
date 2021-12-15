@@ -9,7 +9,9 @@
       
       <div class="row">
          {% for famille in familles %} 
-             {% set url = path('famille_liste', {'famille': famille}) %}
+         
+            
+              {% set url = path('famille_show', {'nom_famille': famille.nomFamille}) %}
 
             <div class="col-md-4">
                <div class="card bg-light mb-1">
@@ -21,7 +23,7 @@
                            <a href="{{path('medicament_liste')}}">
                               {{famille.nomFamille}}
                            </a>                  
-                        <a href="{{path('medicament_liste')}}" class="btn btn-secondary"> En savoir plus !</a>
+                        <a href="{{ url }}" class="btn btn-secondary"> En savoir plus !</a>
                      </div>
                </div>
             </div>

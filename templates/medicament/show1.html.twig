@@ -1,15 +1,19 @@
     {% extends 'base.html.twig' %}
 
     {% block title %}
-            {{medicaments.nomCommercial}}
+            {{medicament.nomCommercial}}
     {% endblock %}
 
     {% block body %}
 
-    <div class="ad-title" style="background-image: url({{medicaments.nomCommercial}})">
+    <div class="ad-title" style="background-image: url({{medicament.nomCommercial}})">
         <div class="container">
-            <h1>{{medicaments.nomCommercial}}</h1>
-                
+            <h1>{{medicament.nomCommercial}}</h1>
+                 <p class="h2">
+                       {{medicament.PrixEchantion}}&euro;</strong>
+                     
+                     </p>
+                  </div>
                     
            
         </div>
@@ -26,13 +30,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-        <img class="d-block w-100" src="https://i.la-croix.com/729x486/smart/2014/02/14/1106656/Faut-avoir-peur-homme-augmente_0.jpg" alt="First slide">
+        <img class="d-block w-100" src="https://static4.depositphotos.com/1006463/360/i/600/depositphotos_3601033-stock-photo-3d-pills-render-onwhite-background.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100" src="https://gabon-info.ga/wp-content/uploads/2020/07/prescrire-medicaents-liste_0ab26f7dda7e468b05c4a763a4c7aba0.jpg" alt="Second slide">
+        <img class="d-block w-100" src="https://leblogmedical.fr/wp-content/uploads/2012/06/medicament.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
-        <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToptbNefY51KGR1BmdO7ZeqEno0KmpldjTVIInysXPNqH4o8jGbsNKQuY2Sutjm0WQ0t0&usqp=CAU" alt="Third slide">
+        <img class="d-block w-100" src="https://www.francenetinfos.com/wp-content/uploads/2015/12/medicament-en-ligne.jpg" alt="Third slide">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -58,6 +62,7 @@
            <p>Facilis consequatur numquam eius quos rerum laudantium fugit magnam, culpa delectus minus officia, sequi, in sunt et aperiam facere similique?</p>
            <p>Id nostrum quaerat laboriosam in voluptatem ipsa omnis labore aliquam, neque perspiciatis repudiandae praesentium reprehenderit dicta maiores delectus eius ratione.</p>
  </div>
+  <a href="#" class="btn btn-primary">Acheter !</a>
             
             </div>
         

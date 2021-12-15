@@ -3,8 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Medicaments;
+use App\Form\MedicamentsType;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\MedicamentsRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -36,5 +40,40 @@ class MedicamentController extends AbstractController
             'medicament' => $medicament
         ]);
     
+}
+     /**
+     * Permet de créer un medicament 
+     *
+     * @Route("/medicament/new", name="medicament_create")
+     * 
+     * @return void
+     */
+    public function create(Request $request, EntityManagerInterface $manager){
+        $medicament = new Medicaments();
+
+
+        $form = $this->createForm(MedicamentsType::class, $medicaments);
+
+        $form->handleRequest($request);
+
+
+        if($form->isSubmitted() && $form->isValid()){
+            
+            $manager->persist($medicament);
+            $manager->flush();
+
+
+
+            $this->addFlash(
+                'success',
+                "Le medicament <strong>Test</strong> a bien été enregistrée !"
+            ); 
+         
+
+            return $this->redirectToRoute('medicament_show', [
+                   'nom_Commercial' => $medicaments->getNomCommercial()
+            ]);
+
+        }
 }
 }

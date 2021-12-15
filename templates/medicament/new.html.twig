@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un medicament{% endblock %}
+
+{%form_theme form _self %}
+
+{% block body %} 
+
+        <div class="container">
+            <h1>Ajouter un nouveau médicament</h1>
+
+            {{ form_start(form) }}
+
+            
+            {{ form_widget(form) }}
+
+            <button type="submit" class="btn btn-primary">Ajouter le nouveau médicament</button>
+
+            {{form_end(form)}}
+        </div>
+
+
+ {% endblock %}
+
+  
