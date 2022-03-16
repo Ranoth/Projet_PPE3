@@ -1,0 +1,5 @@
+body{
+    background: no-repeat fixed url("/image/photo.jpg");
+    background-size: 100%;
+    background-color: black;
+}

@@ -8,7 +8,9 @@
 {% block header %}
     <h2>Voici le header</h2>
 {% endblock %}
-
+{% block stylesheets %}
+<link  href="css/home.css" rel="stylesheet">
+{% endblock %}
 {% block body %}
    
 <div class="container">
@@ -16,15 +18,15 @@
 <div class="list-group">
   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Bienvenue dans le site Hamdi le BG !</h5>
+      <h3 class="mb-1"><strong>Bienvenue dans le site Hamdi le BG !</h3>
      
     </div>
-    <p class="mb-1">accédez facilement aux différents modes de recherche et dernières données sur les médicaments : gammes de médicaments, spécialités, monographies, substances actives, laboratoires pharmaceutiques, etc.</small>
+    <p class="mb-1">Accédez facilement aux différents modes de recherche et dernières données sur les médicaments : gammes de médicaments, spécialités, monographies, substances actives, laboratoires pharmaceutiques, etc.</small>
   </a>
     </div>
-    <p class="mb-1">vous êtes un professionnel de santé ? Des contenus et des fonctionnalités vous sont réservés : accès direct aux spécialités, recherche par classification ATC et par domaine thérapeutique, calcul d‘interactions entre médicaments, aide à la prescription en DC, recherche de médicaments équivalents à l’étranger… Pour en bénéficier, il suffit d'être connecté.</p>
+    <p class="mb-1"> Vous êtes un professionnel de santé ? Des contenus et des fonctionnalités vous sont réservés : accès direct aux spécialités, recherche par classification ATC et par domaine thérapeutique, calcul d‘interactions entre médicaments, aide à la prescription en DC, recherche de médicaments équivalents à l’étranger… Pour en bénéficier, il suffit d'être connecté.</strong></p>
   <p class="lead">
-    <small class="btn btn-primary btn-lg" href="#" role="button">Voir nos medicaments.</small>
+    <small class="btn btn-primary btn-lg" href="{{path('medicament_liste')}}" role="button">Voir nos medicaments.</small>
     </p>
   </a>
 </div>
@@ -37,7 +39,7 @@
                   3 medicament, <strong>49&euro;/ nuit</strong>
                   <small>Pas encore noté</small>
            </div>
-             <img src="http:///placehold.it/1000x400" alt="Image de l'appartement"
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUfygkz1xxRtZKJbYqq2wTDz-VmeJ6lVaMpWNJ8OGJDk-jd5EWwQv4wlQY-Ezkzmdcqvw&usqp=CAU" alt="Image de l'appartement"
              style="height: 200px; width: 100% display: block">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -48,7 +50,7 @@
                      Soluta nihil repellat maxime voluptate at eius 
                     ut modi eveniet ipsam expedita suscipit, quod omnis vitae porro, 
                     rem unde. Tempore, minima labore.</p>
-                    <a href="#" class="btn btn-secondary"> En savoir plus !</a>
+                    <a href="{{path('medicament_liste')}}" class="btn btn-secondary"> En savoir plus !</a>
         </div>
     </div>
 </div>
@@ -58,7 +60,7 @@
                   3 medicament, <strong>49&euro;/ nuit</strong>
                   <small>Pas encore noté</small>
            </div>
-             <img src="http:///placehold.it/1000x400" alt="Image de l'appartement"
+             <img src="https://file1.topsante.com/var/topsante/storage/images/1/3/4/0/1340909/paracetamol-production-bientot-relocalisee-france.jpg?alias=original" alt="Image de l'appartement"
              style="height: 200px; width: 100% display: block">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -69,7 +71,7 @@
                      Soluta nihil repellat maxime voluptate at eius 
                     ut modi eveniet ipsam expedita suscipit, quod omnis vitae porro, 
                     rem unde. Tempore, minima labore.</p>
-                    <a href="#" class="btn btn-secondary"> En savoir plus !</a>
+                    <a href="{{path('medicament_liste')}}" class="btn btn-secondary"> En savoir plus !</a>
         </div>
     </div>
 </div>
@@ -79,7 +81,7 @@
                   3 medicaments, <strong>49&euro;/ nuit</strong>
                   <small>Pas encore noté</small>
            </div>
-             <img src="http:///placehold.it/1000x400" alt="Image de l'appartement"
+             <img src="https://www.pharmashopi.com/images/Image/Doliprane-Tabs-1000-mg-comprime-pellicule-boite-de-8-c-1.jpg" alt="Image de l'appartement"
              style="height: 200px; width: 100% display: block">
                 <div class="card-body">
                     <h4 class="card-title">
@@ -90,7 +92,7 @@
                      Soluta nihil repellat maxime voluptate at eius 
                     ut modi eveniet ipsam expedita suscipit, quod omnis vitae porro, 
                     rem unde. Tempore, minima labore.</p>
-                    <a href="#" class="btn btn-secondary"> En savoir plus !</a>
+                    <a href="{{path('medicament_liste')}}" class="btn btn-secondary"> En savoir plus !</a>
         </div>
     </div>
 </div>

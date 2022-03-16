@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos familles{% endblock %}
+
+{% block body %}
+<div class="container">
+   <h1 class="my-3">Voici les familles de nos médicaments !</h1>
+
+      
+      <div class="row">
+         {% for famille in familles %} 
+         
+            
+              {% set url = path('famille_show', {'nom_famille': famille.nomFamille}) %}
+
+            <div class="col-md-4">
+               <div class="card bg-light mb-1">
+                  <a href="{{path('medicament_liste')}}">
+                     <img src=" {{famille.imageFml}}" alt="Image du composant"style="height: 200px; width: 100%; display: block;">
+                  </a>
+                       <div class="card-body">
+                        <h4 class="card-text">
+                           <a href="{{path('medicament_liste')}}">
+                              {{famille.nomFamille}}
+                           </a>                  
+                        <a href="{{ url }}" class="btn btn-secondary"> En savoir plus !</a>
+                     </div>
+               </div>
+            </div>
+         
+        {% endfor %}
+     </div>
+</div>
+
+
+{% endblock %}
