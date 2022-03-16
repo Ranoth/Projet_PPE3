@@ -19,6 +19,7 @@ class MedicamentController extends AbstractController
      */
     public function index(MedicamentsRepository $repo): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $medicaments = $repo->findAll();
         return $this->render('medicament/medicament.html.twig', [
             'medicaments' => $medicaments,
