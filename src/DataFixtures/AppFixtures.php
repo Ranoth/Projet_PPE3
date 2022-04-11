@@ -45,6 +45,15 @@ class AppFixtures extends Fixture
                }
                $manager->flush();
 
+               for($i = 1; $i <=2 ; $i++) {
+        
+                $composant = new Composant();
+                $composant->setNomComposant($faker->sentence(5))
+                          ->setImage('https://www.superprof.fr/ressources/wp-content/uploads/2013/03/composition-un-medicament-980x653.jpg');
+                          $manager->persist($composant);
+            }
+            $manager->flush();
+
     }
                
 

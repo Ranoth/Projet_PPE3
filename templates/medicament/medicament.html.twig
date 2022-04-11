@@ -21,11 +21,13 @@
                            <a href="{{ url }} ">
                               {{medicaments.nomCommercial}}
                            </a>                  
-                        <a href="{{path('composants_liste')}}" class="btn btn-secondary"> En savoir plus !</a>
+                        <a href="{{path('composants_liste')}}" class="btn btn-secondary"> voir les composants !</a>
+                        <td> <a href="delete-medicaments/{{ medicaments.id }}" class="btn btn-secondary"> supprimer</a></td>
+                       
                      </div>
                </div>
             </div>
-         
+
         {% endfor %}
      </div>
 </div>

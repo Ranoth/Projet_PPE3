@@ -8,9 +8,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\MedicamentsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 class MedicamentController extends AbstractController
 {
@@ -33,26 +33,28 @@ class MedicamentController extends AbstractController
      *
      * @return Response 
      */
-    public function show(Medicaments $medicament){
+    public function show(Medicaments $medicament)
+    {
             
 
         return $this->render('medicament/show1.html.twig', [
             'medicament' => $medicament
         ]);
     
-}
+    }
      /**
      * Permet de créer un medicament 
      *
-     * @Route("/medicament/new", name="medicament_create")
+     * @Route("/medicaments/new", name="medicament_create")
      * 
      * @return void
      */
-    public function create(Request $request, EntityManagerInterface $manager){
+    public function create(Request $request, EntityManagerInterface $manager) 
+    {
         $medicament = new Medicaments();
 
 
-        $form = $this->createForm(MedicamentsType::class, $medicaments);
+        $form = $this->createForm(MedicamentsType::class, $medicament);
 
         $form->handleRequest($request);
 
@@ -61,19 +63,30 @@ class MedicamentController extends AbstractController
             
             $manager->persist($medicament);
             $manager->flush();
-
-
-
             $this->addFlash(
                 'success',
-                "Le medicament <strong>Test</strong> a bien été enregistrée !"
+                "L'annonce <strong>Test</strong> a bien été enregistrée !"
             ); 
          
 
             return $this->redirectToRoute('medicament_show', [
-                   'nom_Commercial' => $medicaments->getNomCommercial()
+                   'nom_commercial' => $medicament->getNomCommercial()
             ]);
 
         }
-}
+                      
+
+        return $this->render('Medicament/new.html.twig', [
+            'form' => $form->createView()
+        ]);
+        }
+    
+    
+        /* @Route("/delete/{id}" , name="medicament_delete")
+        */
+       public function deleteAction($id) {
+        $medicament = $this->MedicamentsRepository->findOrFail($id);
+        $medicament->delete();
+   
+       }
 }
