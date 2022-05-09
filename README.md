@@ -4,10 +4,7 @@
 
 ### Rôles : 
 
-* Léo :
-  * gestion authentification,
-  * gestion modèle statistique,
-  * module/formulaire de recherche
+* Léo : authentification
 * Assia : médicaments
 * Laïdine : composants
 * Hamdi : famille
